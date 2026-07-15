@@ -1,0 +1,117 @@
+pfSense Firewall Setup
+**Objective**
+
+The objective of this lab was to deploy pfSense Community Edition (CE) as the perimeter firewall for a home SOC environment. pfSense acts as the gateway between the internet and the internal lab network while providing routing, firewall services, DHCP, and network segmentation.
+
+
+**Technologies Used**
+Oracle VirtualBox
+pfSense CE 2.8.1
+Virtual Networking
+DHCP
+IPv4
+ZFS File System
+Why pfSense?
+
+pfSense is an open-source firewall and router based on FreeBSD. It is widely used in home labs, educational environments, and small-to-medium enterprise networks.
+
+Key capabilities include:
+
+Firewall Rule Management
+Network Address Translation (NAT)
+DHCP Server
+DNS Forwarding
+VPN Support
+Traffic Monitoring
+Network Segmentation
+
+Learning pfSense helps build practical networking knowledge that is useful for SOC Analyst, Network Security, and Cybersecurity roles.
+
+Lab Environment
+Component	Value
+Hypervisor	Oracle VirtualBox
+Firewall	pfSense CE 2.8.1
+WAN	DHCP
+LAN	192.168.1.1/24
+Installation Steps
+1. Created Virtual Machine
+
+Created a new VirtualBox virtual machine and attached the pfSense Community Edition ISO.
+
+2. Started Installation
+
+Selected:
+
+Install CE
+Quick/Easy Install
+Default Keyboard Layout
+3. File System
+
+Selected:
+
+File System → ZFS
+Partition Scheme → GPT
+Virtual Device Type → Stripe
+
+Reason:
+
+A single virtual disk was used for the lab; therefore, RAID or mirroring was unnecessary.
+
+4. Installed Latest Stable Version
+
+Installed:
+
+pfSense CE 2.8.1
+5. Reboot
+
+After installation:
+
+Removed the installation ISO from the VirtualBox optical drive.
+Rebooted the virtual machine.
+Network Configuration
+
+Configured the LAN interface using:
+
+Setting	Value
+WAN	DHCP
+LAN IP	192.168.1.1
+Subnet	/24
+Gateway	None
+IPv6	Disabled
+DHCP Server	Enabled
+Final Configuration
+WAN
+↓
+
+10.0.2.15/24 (DHCP)
+
+↓
+
+pfSense Firewall
+
+↓
+
+LAN
+
+192.168.1.1/24
+Skills Learned
+Installing pfSense CE
+Configuring firewall interfaces
+Assigning WAN and LAN interfaces
+Static IP configuration
+DHCP configuration
+Virtual networking
+Network segmentation fundamentals
+Enterprise firewall deployment
+Why This Matters for SOC
+
+A Security Operations Center relies on firewall logs to investigate suspicious network activity.
+
+During this lab, I learned how a firewall:
+
+Separates trusted and untrusted networks.
+Assigns IP addresses to internal hosts.
+Routes traffic between networks.
+Serves as the first layer of network defense.
+
+This foundational knowledge is essential for understanding network traffic analysis and security monitoring in enterprise SOC environments.
