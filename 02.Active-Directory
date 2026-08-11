@@ -1,1 +1,41 @@
+# Active Directory Server
 
+## Overview
+
+The Active Directory server is the central identity and authentication component of the SOC Home Lab.
+
+The server was deployed using Windows Server 2022 and configured as a Domain Controller for the lab environment.
+
+## Lab Configuration
+
+| Configuration | Value |
+|---|---|
+| Hostname | SOC-AD |
+| Operating System | Windows Server 2022 Datacenter Evaluation |
+| Domain | soc.lab |
+| NetBIOS Name | SOC |
+| IP Address | 192.168.1.10 |
+| Subnet Mask | 255.255.255.0 |
+| Gateway | 192.168.1.1 |
+| Virtualization | Oracle VirtualBox |
+
+## Configuration Steps
+
+### 1. Windows Server Deployment
+
+Deployed Windows Server 2022 as the Active Directory server in Oracle VirtualBox.
+
+### 2. Network Configuration
+
+Configured the server with a static IP address:
+
+- IP: `192.168.1.10`
+- Subnet Mask: `255.255.255.0`
+- Default Gateway: `192.168.1.1`
+
+Network connectivity was verified using:
+
+```powershell
+ping 192.168.1.1
+ping 8.8.8.8
+nslookup google.com
