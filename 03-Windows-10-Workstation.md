@@ -24,7 +24,7 @@ The workstation is connected to the pfSense GREEN internal network and joined to
 
 The workstation was connected to the `GREEN` Internal Network in VirtualBox.
 
-Static IPv4 configuration:
+### Static IPv4 configuration:
 
 
 IP Address:      192.168.1.20
@@ -34,7 +34,7 @@ Preferred DNS:   192.168.1.10
 
 The Active Directory server was configured as the primary DNS server because domain services depend on Active Directory-integrated DNS.
 
-Connectivity Testing
+### Connectivity Testing
 
 Connectivity was verified between the workstation, pfSense gateway and Active Directory server.
 
@@ -58,13 +58,13 @@ Domain Authentication
 
 Domain authentication was verified using the Active Directory Administrator account.
 
-SOC\Administrator
+### SOC\Administrator
 
 The logged-in identity was verified using:
 
 whoami
 
-Expected result:
+### Expected result:
 
 soc\administrator
 Purpose in the SOC Lab
